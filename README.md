@@ -1,9 +1,5 @@
 # 16-deep-learning-challenge
-<<<<<<< HEAD
 ![Header IMG](Images/Dongang_Machine_Learning.jpeg)
-=======
-![Header IMG](Images/Dongang_Machine Learning_Theme Image-min_1.jpeg)
->>>>>>> 9ab66e85f10caf7c882b568e24b5fb5326eb7089
 
 ## File Location
 - In Images you can find all images used in this project
