@@ -56,7 +56,7 @@
 
 2. Adding more layers and nuerons to the model:
 
-![adding_layers](Images/OptimizedModel.PNG)
+![adding_layers](Images/OptimizedModel.jpg)
 
 * This was the area I fiddled with the most and in the end it didn't really bear any fruit and the final result despite adding more and more compexity to the deep neural network it really didn't work any better. I first added 2 more hidden layers and a whole bunch of neurons to each layer but despite all of that it still only ended up with 72-74% 
 * I also attempted to use a bunch of different models such as LeakyReLU but to no avail while it didn't appear to make the model worse it didn't improve it.
