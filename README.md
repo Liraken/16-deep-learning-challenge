@@ -3,11 +3,11 @@
 
 ## File Location
 - In Images you can find all images used in this project
-- In 'Refrences' you can find.....
-- In 'Resources' you can find.....
+- In 'Refrences' you can find a single repo from ivarvani used as a refrence for this assignment
 - In 'Starter_Code' you can find the starter code
-- In TBD' you can find the work for this assignment
-
+- In 'Outputs' you can find the two h5 files created in this assignment
+- In 'deep-learning' and deep-learning-optimization you can find the initial workbook and the workbook with improvments to try to increase accuaracy 
+- In 'Analysis-Report.md' you can find the final analysis on this assignement
 
 ## Sources
 - [Header Image] https://www.mouser.com/blog/development-of-deep-learning

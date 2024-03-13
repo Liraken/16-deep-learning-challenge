@@ -23,14 +23,12 @@
 #### What variable(s) should be removed from the input data because they are neither targets nor features?
 * Identification columns: The "EIN" and "NAME" columns are identification columns that typically provide unique identifiers for each organization. These columns usually have no direct impact on the target variable and can be dropped without affecting the model's accuracy.
 
-![Drop_Column](Images/DropColumns.jpg)
-
 ### Compiling, Training, and Evaluating the Model
 
 #### How many neurons, layers, and activation functions did you select for your neural network model, and why?
 * In my first neural network model, I used a two-layer architecture with a specific choice for the number of neurons, layers, and activation functions.
 
-![original_model](Images/InitialModel.jpg)
+![original_results](Images/first_model.PNG)
 
 * By selecting 16 neurons in the first hidden layer (units_1 = 16), 5 neurons in the second hidden layer (units_2 = 5), and using the ReLU activation function  and (activation="relu") for both hidden layers, you aimed to create a model with sufficient complexity to capture and learn meaningful patterns in the data. The choice of ReLU activation helps introduce non-linearity and allows the model to learn complex relationships between the input features and the target variable.
 
@@ -41,51 +39,64 @@
 #### Were you able to achieve the target model performance?
 * As you can see below I was only able to achieve 72%, which was not the target model performance which was 75%. 
 
-![original_results](Images/InitialModel.jpg)
+![original_results](Images/AlphabetSoup_Output.PNG)
 
 #### What steps did you take in your attempts to increase model performance?
-1. Increasing the number of epochs
-2. Add More Layers and Neurons
-3. Try different models such as 'LeakyReLU', 'ELU', relu and a few others 
+1. Increasing the number of epochs:
    
-![Increase_Epochs](Images/IncreasedEpochs.jpg)
+![opt_1](Images/Increase_epochs.PNG)
 
 * Increasing the number of epochs gives the model more opportunities to learn from the data and adjust the weights. It allows the model to refine its predictions and find better parameter values, which can lead to improved accuracy. However, it's important to find a balance as increasing epochs excessively can lead to overfitting.
 
-* When retrying the model with any number of epochs the best output I could manage to get was 74%
+![opt_1_results](Images/Increase_epochs_accuracy.PNG)
+
+* As you can see, I was only able to achieve ~ 73%.
 
 2. Adding more layers and nuerons to the model:
 
-![adding_layers](Images/OptimizedModel.jpg)
+![opt_2](Images/adding_more_hidden_layers.PNG)
 
-* This was the area I fiddled with the most and in the end it didn't really bear any fruit and the final result despite adding more and more compexity to the deep neural network it really didn't work any better. I first added 2 more hidden layers and a whole bunch of neurons to each layer but despite all of that it still only ended up with 72-74% 
-* I also attempted to use a bunch of different models such as LeakyReLU but to no avail while it didn't appear to make the model worse it didn't improve it.
+* Adding more layers can provide the model with additional capacity to capture and represent intricate relationships within the data. Each layer can learn different levels of abstraction, enabling the model to extract more meaningful features and potentially improving accuracy. Deep models with multiple layers have the ability to learn hierarchical representations of the data, which can be advantageous for complex problems.
+* * By increasing the number of neurons in a layer, the model becomes more expressive and can capture complex patterns in the data. This allows for better representation of the underlying relationships between the features and the target variable, potentially leading to higher accuracy.
   
-![adding_layers_output](Images/OptimizedOutput.jpg)
+![opt_2_results](Images/more_hidden_layers_accuracy.PNG)
 
-## Conclusion: Enhancing Deep Learning Model Performance
+* Again, I was only able to achieve ~ 73%
 
-Despite the significant efforts put into developing the deep learning model, its accuracy plateaued at 73%. For future enhancements, several strategies are proposed to potentially increase this metric. These strategies are aimed at refining the model's learning capacity and its generalization to unseen data. The recommended steps are as follows:
 
-- **Expand the Dataset**:
-  - Enriching the dataset could substantially benefit the model. A larger, more varied dataset allows for improved generalization, as the model would be trained on a broader spectrum of examples. Efforts should be made to gather more data pertinent to the problem at hand, enhancing the model's predictive precision.
+3. Dropping one extra feature (STATUS):
+   
+![opt_4](Images/dropping_columns.PNG)
+* model will now have 42 input_dim
+![opt_4](Images/Model_dropping_one_column.PNG)
 
-- **Improve Data Preprocessing**:
-  - The integrity of the input data is crucial. This encompasses meticulous data cleaning efforts such as dealing with missing values, outliers, and feature scaling. A thorough review and cleaning process could significantly diminish the influence of noise and irrelevant information, thereby potentially boosting the model's accuracy.
 
-- **Experiment with Different Algorithms**:
-  - Venturing into alternative machine learning algorithms, such as the Random Forest classifier, could provide fresh insights. Random Forest, in particular, offers an analysis of feature importance, highlighting the most significant predictors. This could inform a more focused approach, honing in on the attributes that truly matter.
+* results
+![opt_4_results](Images/drop_column_accuracy.PNG)
 
-- **Focus on Feature Importance**:
-  - Understanding which features most strongly influence the model's decisions is key. By pinpointing and prioritizing these features, the model can be streamlined, reducing unnecessary complexity and enhancing its ability to discern meaningful patterns.
+* Again, I was only able to achieve ~ 73%
 
-- **Address Bias and Outliers**:
-  - The presence of bias and outliers can distort the model's learning, leading to suboptimal performance. Strategies such as outlier detection and data transformation can be employed to mitigate their effects, paving the way for more accurate predictions.
+## Conclusion
+The deep learning model that I have developed was unable to achieve accuracy higher than 73%. To further improve the model's performance, I can consider the following steps:
 
-- **Implement Data Binning**:
-  - For certain types of data, binning continuous variables can simplify their relationship with the target outcome. This can make the model more resilient to data variability, possibly improving predictive accuracy.
+1. Adding more data:
+   * Increasing the size of the training dataset can help the model learn from a larger and more diverse set of examples. This can improve the generalisation capability of the model and potentially lead to higher accuracy. Collecting additional data relevant to the classification problem could provide the model with more information to make better predictions.
+  
+2. Checking data cleaning:
+   * Ensuring that the data is properly cleaned is crucial for model performance. Cleaning includes handling missing values, handling outliers, normalizing or standardizing features, and addressing any data quality issues. By thoroughly reviewing and cleaning the data, I can mitigate the impact of noise or irrelevant information that might be affecting the model's accuracy.
+  
+3. Exploring alternative machine learning algorithms:
+   * Trying a different algorithm, such as Random Forest, can provide valuable insights into the importance of different features. Random Forest can measure feature importance based on how effectively each feature contributes to the overall prediction. This analysis can help identify the key predictor columns, allowing you to focus on the most informative features and potentially improve accuracy.
 
-In essence, elevating the model's performance will involve a multifaceted approach: expanding and refining the dataset, exploring diverse algorithms, emphasizing key features, correcting biases, and employing data binning where beneficial. It's a process of continuous iteration and refinement, with each step geared towards enhancing the model's predictive capabilities in solving the classification problem.
+4. Identifying feature importance and selecting relevant attributes:
+   * Analysing feature importance helps determine which attributes have the most significant impact on the output. By identifying and selecting the most important attributes, you can reduce the noise and complexity in the model. Focusing on the most relevant features can enhance the model's ability to capture meaningful patterns and improve accuracy.
+  
+5. Addressing high bias and outliers:
+   * High bias in the model can be caused by outliers or skewed data points that deviate significantly from the majority of the dataset. Identifying and addressing these outliers can help improve the model's performance. Techniques such as outlier detection, data transformation, or stratified sampling can be applied to mitigate the impact of outliers and reduce bias in the model.
 
+6. Binning the data:
+   * Binning continuous variables can be useful in certain scenarios. It can help simplify the relationship between variables and the target variable by grouping similar values into bins. This can reduce the complexity of the model and make it more robust to noise or fluctuations in the data, potentially leading to improved accuracy.
+
+In summary, to improve the deep learning model's performance, I would consider adding more data, ensuring proper data cleaning, exploring alternative algorithms, identifying feature importance, addressing bias and outliers, and applying data binning techniques. Each step aims to enhance the model's ability to capture relevant patterns and reduce noise, ultimately improving accuracy in the classification problem. It is important to iterate and experiment with these steps, evaluating the impact on model performance and fine-tuning as necessary.
 
 
