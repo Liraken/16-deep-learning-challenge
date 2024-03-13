@@ -39,29 +39,27 @@
 #### Were you able to achieve the target model performance?
 * As you can see below I was only able to achieve 72%, which was not the target model performance which was 75%. 
 
-![original_results](Images/InitialOutput.PNG)
+![original_results](Images/InitialOutput.png)
 
 #### What steps did you take in your attempts to increase model performance?
 1. Increasing the number of epochs
 2. Add More Layers and Neurons
 3. Try different models such as 'LeakyReLU', 'ELU', relu and a few others 
    
-![opt_1](Images/IncreasedEpochs.PNG)
+![Increase_Epochs](Images/IncreasedEpochs.png)
 
 * Increasing the number of epochs gives the model more opportunities to learn from the data and adjust the weights. It allows the model to refine its predictions and find better parameter values, which can lead to improved accuracy. However, it's important to find a balance as increasing epochs excessively can lead to overfitting.
-
-![opt_1_results](Images/Increase_epochs_accuracy.PNG)
 
 * When retrying the model with any number of epochs the best output I could manage to get was 74%
 
 2. Adding more layers and nuerons to the model:
 
-![opt_2](Images/adding_more_hidden_layers.PNG)
+![adding_layers](Images/OptimizedModel.png)
 
 * This was the area I fiddled with the most and in the end it didn't really bear any fruit and the final result despite adding more and more compexity to the deep neural network it really didn't work any better. I first added 2 more hidden layers and a whole bunch of neurons to each layer but despite all of that it still only ended up with 72-74% 
 * I also attempted to use a bunch of different models such as LeakyReLU but to no avail while it didn't appear to make the model worse it didn't improve it.
   
-![opt_2_results](Images/OptimizedOutput.PNG)
+![adding_layers_output](Images/OptimizedOutput.png)
 
 ## Conclusion: Enhancing Deep Learning Model Performance
 
