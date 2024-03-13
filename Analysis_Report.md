@@ -23,7 +23,7 @@
 #### What variable(s) should be removed from the input data because they are neither targets nor features?
 * Identification columns: The "EIN" and "NAME" columns are identification columns that typically provide unique identifiers for each organization. These columns usually have no direct impact on the target variable and can be dropped without affecting the model's accuracy.
 
-![Drop_Column](Images/DropColumns.jpg)
+![Drop_Column](Images/DropColumns.jpeg)
 
 ### Compiling, Training, and Evaluating the Model
 
