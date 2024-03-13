@@ -23,12 +23,14 @@
 #### What variable(s) should be removed from the input data because they are neither targets nor features?
 * Identification columns: The "EIN" and "NAME" columns are identification columns that typically provide unique identifiers for each organization. These columns usually have no direct impact on the target variable and can be dropped without affecting the model's accuracy.
 
+![Drop_Column](Images/DropColumns.jpeg)
+
 ### Compiling, Training, and Evaluating the Model
 
 #### How many neurons, layers, and activation functions did you select for your neural network model, and why?
 * In my first neural network model, I used a two-layer architecture with a specific choice for the number of neurons, layers, and activation functions.
 
-![original_results](Images/FirstModel.PNG)
+![original_model](Images/InitialModel.jpeg)
 
 * By selecting 16 neurons in the first hidden layer (units_1 = 16), 5 neurons in the second hidden layer (units_2 = 5), and using the ReLU activation function  and (activation="relu") for both hidden layers, you aimed to create a model with sufficient complexity to capture and learn meaningful patterns in the data. The choice of ReLU activation helps introduce non-linearity and allows the model to learn complex relationships between the input features and the target variable.
 
@@ -39,14 +41,14 @@
 #### Were you able to achieve the target model performance?
 * As you can see below I was only able to achieve 72%, which was not the target model performance which was 75%. 
 
-![original_results](Images/InitialOutput.png)
+![original_results](Images/InitialModel.jpeg)
 
 #### What steps did you take in your attempts to increase model performance?
 1. Increasing the number of epochs
 2. Add More Layers and Neurons
 3. Try different models such as 'LeakyReLU', 'ELU', relu and a few others 
    
-![Increase_Epochs](Images/IncreasedEpochs.png)
+![Increase_Epochs](Images/IncreasedEpochs.jpeg)
 
 * Increasing the number of epochs gives the model more opportunities to learn from the data and adjust the weights. It allows the model to refine its predictions and find better parameter values, which can lead to improved accuracy. However, it's important to find a balance as increasing epochs excessively can lead to overfitting.
 
@@ -54,12 +56,12 @@
 
 2. Adding more layers and nuerons to the model:
 
-![adding_layers](Images/OptimizedModel.png)
+![adding_layers](Images/OptimizedModel.jpeg)
 
 * This was the area I fiddled with the most and in the end it didn't really bear any fruit and the final result despite adding more and more compexity to the deep neural network it really didn't work any better. I first added 2 more hidden layers and a whole bunch of neurons to each layer but despite all of that it still only ended up with 72-74% 
 * I also attempted to use a bunch of different models such as LeakyReLU but to no avail while it didn't appear to make the model worse it didn't improve it.
   
-![adding_layers_output](Images/OptimizedOutput.png)
+![adding_layers_output](Images/OptimizedOutput.jpeg)
 
 ## Conclusion: Enhancing Deep Learning Model Performance
 
