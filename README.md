@@ -49,7 +49,6 @@ Using your knowledge of Pandas and scikit-learn’s `StandardScaler()`, you’ll
 Start by uploading the starter file to Google Colab, then using the information we provided in the Challenge files, follow the instructions to complete the preprocessing steps.
 
   1. Read in the `charity_data.csv` to a Pandas DataFrame, and be sure to identify the following in your dataset:
-
     * What variable(s) are the target(s) for your model?
     * What variable(s) are the feature(s) for your model?
 
